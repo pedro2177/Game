@@ -12,7 +12,7 @@ public class AlvoMovel {
     public Integer caminho;
     private Localizacao pontoDestino;
     private Localizacao localizacaoAtual;
-    private Tamanho tamanho;
+    private Tamanho tamanho = new Tamanho(50,50);
     public ImageIcon imageAlvo = new ImageIcon("src/main/resources/sprites/Alvo.png");
     private Timestamp timestamp = new Timestamp(30);
     private long frequenciaAttPosicao = 30;
@@ -29,6 +29,10 @@ public class AlvoMovel {
             this.pontoDestino = new Localizacao(380,500);
         }
         this.localizacaoAtual = this.pontoOrigem;
+    }
+
+    public boolean getAtingido(){
+        return atingido;
     }
     public ImageIcon getImageAlvo() {
         return imageAlvo;
@@ -82,12 +86,9 @@ public class AlvoMovel {
         this.chegadaNoDestino = chegadaNoDestino;
     }
 
-    public boolean isAtingido() {
-        return atingido;
-    }
-
     public void setAtingido(boolean atingido) {
         this.atingido = atingido;
+
     }
 
     public void setPontoOrigem(Localizacao pontoOrigem) {
